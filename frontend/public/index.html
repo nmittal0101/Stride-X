@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>StrideX - E-Commerce Website</title>
+    <link rel="stylesheet" href="styles.css" />
+    <script src="https://kit.fontawesome.com/16a3c02450.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <div class="logo-top">StrideX</div>
+
+    <nav class="navbar">
+        <div class="nav-left">
+            <a href="signup.html" class="signin-signup">Sign in/Sign up</a>
+        </div>
+
+        <div class="nav-center">
+            <ul class="nav-menu">
+                <li><a href="index.html">Home</a></li>
+                <li class="dropdown">
+                    <a href="product.html">Products <i class="fas fa-caret-right"></i></a>
+                    <div class="dropdown-content">
+                        <a href="product.html">All Products</a>
+                        <a href="sneakermen.html">Men's Sneakers</a>
+                        <a href="sneakerwomen.html">Women's Sneakers</a>
+                        <a href="heels.html">Heels</a>
+                        <a href="boots.html">Boots</a>
+                        <a href="sportshoes.html">Sport Shoes</a>
+                    </div>
+                </li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="support.html">Support</a></li>
+                <li><a href="about.html">About</a></li>
+            </ul>
+        </div>
+
+        <div class="nav-right">
+            <i class="fas fa-search icon" id="searchIcon"></i>
+            <input type="text" placeholder="Search products..." class="search-input" id="searchInput" />
+
+            <a href="wishlist.html" title="Wishlist">
+                <i class="fas fa-heart icon"></i>
+            </a>
+
+            <a href="cart.html">
+                <i class="fas fa-shopping-cart icon" title="Cart"></i>
+            </a>
+
+            <a href="profile.html">
+                <i class="fas fa-user icon" title="Profile"></i>
+            </a>
+        </div>
+    </nav>
+
+    <div>
+        <video src="videos/homepage.mp4" height="500" width="1264" muted autoplay loop controls>Homepage Video</video>
+    </div>
+
+    <div class="sliding-boxes-container">
+        <div class="sliding-boxes" id="slidingBoxes">
+            <div class="slide-box box1" onclick="location.href='newarrivals.html'">New Arrivals</div>
+            <div class="slide-box box2" onclick="location.href='deals.html'">Deals</div>
+            <div class="slide-box box3" onclick="location.href='bestsellers.html'">Bestsellers</div>
+            <div class="slide-box box4" onclick="location.href='women.html'">Women</div>
+            <div class="slide-box box5" onclick="location.href='men.html'">Men</div>
+        </div>
+    </div>
+
+    <div class="sale">
+        <a href="product.html">
+            <img src="images/sale banner.png" alt="Sale Banner" width="1240" height="450"
+                style="justify-content: center;">
+        </a>
+    </div>
+
+    <section class="top-selling-products">
+        <h2>Our Top Selling Products This Month</h2>
+        <div class="product-grid">
+            <div class="product-card">
+                <img src="images/Vans Old Skool Classic.jpg" alt="Vans Old Skool Classic" />
+                <h3>Vans Old Skool Classic</h3>
+                <p class="product-price">₹6999</p>
+                <div class="product-actions">
+                    <i class="fas fa-shopping-cart icon btn-add-to-cart"
+                        onclick="addToCart('prod023', 'Running Spikes', 5200, 'images/Vans Old Skool Classic.jpg')"></i>
+                    <i class="fas fa-heart icon btn-add-to-wishlist"
+                        onclick="addToWishlist('prod023', 'Running Spikes', 5200, 'images/Vans Old Skool Classic.jpg')"></i>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <img src="images/Catwalk Block Heel Sandals.jpg" alt="Catwalk Block Heel Sandals" />
+                <h3>Catwalk Block Heel Sandals</h3>
+                <p class="product-price">₹2199</p>
+                <div class="product-actions">
+                    <i class="fas fa-shopping-cart icon btn-add-to-cart"
+                        onclick="addToCart('prod006', 'Casual Canvas Shoes', 1499, 'images/Catwalk Block Heel Sandals.jpg')"></i>
+                    <i class="fas fa-heart icon btn-add-to-wishlist"
+                        onclick="addToWishlist('prod006', 'Casual Canvas Shoes', 1499, 'images/Catwalk Block Heel Sandals.jpg')"></i>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <img src="images/Skechers Uno Stand On Air.jpg" alt="Skechers Uno Stand On Air" />
+                <h3>Skechers Uno Stand On Air</h3>
+                <p class="product-price">₹7499</p>
+                <div class="product-actions">
+                    <i class="fas fa-shopping-cart icon btn-add-to-cart"
+                        onclick="addToCart('prod021', 'Fashion Boots', 3800, 'images/Skechers Uno Stand On Air.jpg')"></i>
+                    <i class="fas fa-heart icon btn-add-to-wishlist"
+                        onclick="addToWishlist('prod021', 'Fashion Boots', 3800, 'images/Skechers Uno Stand On Air.jpg')"></i>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <img src="images/H&M Stiletto Pointed Toe.jpg" alt="H&M Stiletto Pointed Toe" />
+                <h3>H&M Stiletto Pointed Toe</h3>
+                <p class="product-price">₹2999</p>
+                <div class="product-actions">
+                    <i class="fas fa-shopping-cart icon btn-add-to-cart"
+                        onclick="addToCart('prod010', 'Sport Sandals', 1800, 'images/H&M Stiletto Pointed Toe.jpg')"></i>
+                    <i class="fas fa-heart icon btn-add-to-wishlist"
+                        onclick="addToWishlist('prod010', 'Sport Sandals', 1800, 'images/H&M Stiletto Pointed Toe.jpg')"></i>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <img src="images/Nike Court Vision Low.jpg" alt="Nike Court Vision Low" />
+                <h3>Nike Court Vision Low</h3>
+                <p class="product-price">₹5295</p>
+                <div class="product-actions">
+                    <i class="fas fa-shopping-cart icon btn-add-to-cart"
+                        onclick="addToCart('prod014', 'Ankle Boots', 4200, 'images/Nike Court Vision Low.jpg')"></i>
+                    <i class="fas fa-heart icon btn-add-to-wishlist"
+                        onclick="addToWishlist('prod014', 'Ankle Boots', 4200, 'images/Nike Court Vision Low.jpg')"></i>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <img src="images/Reebok Zig Dynamica 4.jpg" alt="Reebok Zig Dynamica 4" />
+                <h3>Reebok Zig Dynamica 4</h3>
+                <p class="product-price">₹5499</p>
+                <div class="product-actions">
+                    <i class="fas fa-shopping-cart icon btn-add-to-cart"
+                        onclick="addToCart('prod020', 'Outdoor Sandals', 1600, 'images/Reebok Zig Dynamica 4.jpg')"></i>
+                    <i class="fas fa-heart icon btn-add-to-wishlist"
+                        onclick="addToWishlist('prod020', 'Outdoor Sandals', 1600, 'images/Reebok Zig Dynamica 4.jpg')"></i>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <img src="images/Aldo Strappy High Heels.jpg" alt="Aldo Strappy High Heels" />
+                <h3>Aldo Strappy High Heels</h3>
+                <p class="product-price">₹8499</p>
+                <div class="product-actions">
+                    <i class="fas fa-shopping-cart icon btn-add-to-cart"
+                        onclick="addToCart('prod004', 'Comfortable Flip Flops', 899, 'images/Aldo Strappy High Heels.jpg')"></i>
+                    <i class="fas fa-heart icon btn-add-to-wishlist"
+                        onclick="addToWishlist('prod004', 'Comfortable Flip Flops', 899, 'images/Aldo Strappy High Heels.jpg')"></i>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <img src="images/Clarks Desert Boots.jpg" alt="Clarks Desert Boots" />
+                <h3>Clarks Desert Boots</h3>
+                <p class="product-price">₹9499</p>
+                <div class="product-actions">
+                    <i class="fas fa-shopping-cart icon btn-add-to-cart"
+                        onclick="addToCart('prod007', 'Formal Leather Shoes', 4500, 'images/Clarks Desert Boots.jpg')"></i>
+                    <i class="fas fa-heart icon btn-add-to-wishlist"
+                        onclick="addToWishlist('prod007', 'Formal Leather Shoes', 4500, 'images/Clarks Desert Boots.jpg')"></i>
+                </div>
+            </div>
+
+    </section>
+
+    <footer>
+        <div class="footer-section">
+            <button class="footer-toggle">Support</button>
+            <div class="footer-content">
+                <p>Email: stridex.global@gmail.com</p>
+            </div>
+        </div>
+        <div class="footer-section">
+            <button class="footer-toggle">About Us</button>
+            <div class="footer-content">
+                <p>StrideX represents a modern, secure, and scalable e-commerce platform focused on selling footwear
+                    online. With a robust front-end, secure and functional back-end, and a user-friendly admin panel,
+                    the project showcases collaborative effort and practical application of web development concepts. It
+                    is a step forward in learning real-world software development and solving customer needs in the
+                    digital era.</p>
+            </div>
+        </div>
+        <div class="footer-section">
+            <button class="footer-toggle">Visit Us On</button>
+            <div class="footer-content">
+                <p>Instagram: stridexglobal</p>
+            </div>
+        </div>
+        <div class="footer-section">
+            <button class="footer-toggle">Our Team</button>
+            <div class="footer-content">
+                <p>Bhoomi Jindal - Frontend Development | Nandini Mittal - Backend Development | Atal Sachan</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="scripts.js"></script>
+</body>
+
+</html>

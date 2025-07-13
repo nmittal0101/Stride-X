@@ -1,0 +1,397 @@
+/* Products Page Specific Styles */
+
+.products-container {
+    max-width: 1200px;
+    margin: 3rem auto;
+    padding: 0 1rem;
+    text-align: center;
+}
+
+.products-container h2 {
+    font-size: 2.2rem;
+    margin-bottom: 2.5rem;
+    color: #5C4B4B;
+    user-select: none;
+}
+
+/* Toggle Button Container */
+.filter-toggle-container {
+    text-align: left;
+    margin-bottom: 1.5rem;
+}
+
+.toggle-filter-btn {
+    background-color: #A45D41;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    padding: 10px 18px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    display: inline-flex; /* Ensure button is always visible */
+    align-items: center;
+    gap: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+.toggle-filter-btn:hover {
+    background-color: #8C4C36;
+    transform: translateY(-2px);
+}
+
+/* Main layout for filters and products */
+.main-product-layout {
+    display: grid;
+    grid-template-columns: 1fr; /* Default to single column (products only) */
+    gap: 30px;
+    align-items: start;
+    margin-top: 2rem;
+    transition: grid-template-columns 0.4s ease-in-out; /* Smooth transition for layout change */
+}
+
+/* When filters are active, change grid layout */
+.main-product-layout.filters-active {
+    grid-template-columns: 250px 1fr; /* Show filter column on larger screens */
+}
+
+/* Styles for the Filter Sidebar */
+.product-filters {
+    background-color: #FFE8CD;
+    border-radius: 10px;
+    padding: 1.5rem;
+    box-shadow: 0 4px 12px rgba(92, 75, 75, 0.1);
+    text-align: left;
+    position: sticky;
+    top: 100px;
+    max-height: calc(100vh - 120px);
+    overflow-y: auto;
+    
+    /* ALWAYS Hide filter section by default */
+    display: none; /* Hidden by default */
+    opacity: 0;
+    transform: translateX(-100%); /* Slide out to the left */
+    transition: transform 0.4s ease-in-out, opacity 0.4s ease-in-out, display 0.4s step-end; /* Smooth transition for display */
+}
+
+/* Show filter section when active class is added */
+.product-filters.active {
+    display: block; /* Show when active */
+    opacity: 1;
+    transform: translateX(0); /* Slide into view */
+    transition: transform 0.4s ease-in-out, opacity 0.4s ease-in-out, display 0.4s step-start;
+}
+
+
+.product-filters h3 {
+    font-size: 1.8rem;
+    color: #A45D41;
+    margin-bottom: 1.5rem;
+    text-align: center;
+}
+
+.filter-group {
+    margin-bottom: 1.8rem;
+    padding-bottom: 1.5rem;
+    border-bottom: 1px solid rgba(92, 75, 75, 0.1);
+}
+
+.filter-group:last-of-type {
+    border-bottom: none;
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+
+.filter-group h4 {
+    font-size: 1.2rem;
+    color: #5C4B4B;
+    margin-bottom: 1rem;
+    font-weight: 600;
+}
+
+.filter-group label {
+    display: block;
+    margin-bottom: 0.7rem;
+    font-size: 1rem;
+    color: #5C4B4B;
+    cursor: pointer;
+}
+
+.filter-group input[type="checkbox"],
+.filter-group input[type="radio"] {
+    margin-right: 8px;
+    transform: scale(1.1);
+    accent-color: #A45D41;
+}
+
+/* Price Slider */
+.price-slider {
+    width: 100%;
+    -webkit-appearance: none;
+    appearance: none;
+    height: 8px;
+    background: #d3d3d3;
+    outline: none;
+    opacity: 0.7;
+    -webkit-transition: .2s;
+    transition: opacity .2s;
+    border-radius: 5px;
+    margin-top: 10px;
+}
+
+.price-slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: #A45D41;
+    cursor: pointer;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+}
+
+.price-slider::-moz-range-thumb {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: #A45D41;
+    cursor: pointer;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+}
+
+.filter-group p {
+    font-size: 0.95rem;
+    color: #5C4B4B;
+    margin-top: 0.8rem;
+}
+
+/* Color Swatches */
+.color-options {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 0.5rem;
+}
+
+.color-swatch {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    border: 2px solid #5C4B4B;
+    cursor: pointer;
+    transition: transform 0.2s ease, border-color 0.2s ease;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+
+.color-swatch:hover {
+    transform: scale(1.1);
+    border-color: #A45D41;
+}
+
+/* Filter Buttons */
+.apply-filters-btn,
+.clear-filters-btn {
+    display: block;
+    width: 100%;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    margin-top: 1.5rem;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.apply-filters-btn {
+    background-color: #A45D41;
+    color: white;
+}
+
+.apply-filters-btn:hover {
+    background-color: #8C4C36;
+}
+
+.clear-filters-btn {
+    background-color: #E8E2DD;
+    color: #5C4B4B;
+    margin-top: 1rem;
+}
+
+.clear-filters-btn:hover {
+    background-color: #D3CDC7;
+}
+
+
+/* Product Listing Container - now holds the product-grid */
+.product-listing {
+    /* Takes remaining space */
+    text-align: center;
+}
+
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2.5rem;
+    padding: 1rem;
+}
+
+.product-card {
+    background-color: #FFF2EB;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(92, 75, 75, 0.1);
+    padding: 1.5rem;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+    user-select: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.product-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 10px 25px rgba(92, 75, 75, 0.2);
+}
+
+.product-card img {
+    max-width: 100%;
+    height: 200px;
+    object-fit: contain;
+    border-radius: 8px;
+    margin-bottom: 1rem;
+}
+
+.product-card h3 {
+    font-size: 1.5rem;
+    color: #5C4B4B;
+    margin-bottom: 0.5rem;
+    height: 3em;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+}
+
+.product-card .product-price {
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: #A45D41;
+    margin-bottom: 1.2rem;
+}
+
+.product-actions {
+    display: flex;
+    gap: 25px;
+    margin-top: 10px;
+}
+
+.product-actions .icon {
+    font-size: 1.8rem;
+    color: #A45D41;
+    cursor: pointer;
+    transition: color 0.3s ease, transform 0.2s ease;
+}
+
+.product-actions .icon:hover {
+    color: #5C4B4B;
+    transform: scale(1.1);
+}
+
+.product-actions .btn-add-to-cart:hover {
+    color: #A45D41;
+}
+
+.product-actions .btn-add-to-wishlist:hover {
+    color: #FF0000;
+}
+
+
+/* Responsive adjustments */
+@media (max-width: 992px) {
+    /* On smaller screens, filters are initially hidden (handled by JS `display: none`) */
+    .main-product-layout.filters-active {
+        grid-template-columns: 1fr; /* On smaller screens, even when "active", filters don't take a column */
+    }
+
+    .product-filters {
+        position: static; /* Remove sticky positioning */
+        max-height: none; /* Remove max-height constraint */
+        overflow-y: visible; /* Allow content to expand */
+        width: 90%; /* Adjust width for better fit on smaller screens */
+        margin: 0 auto; /* Center the filter section */
+    }
+
+    .products-container h2 {
+        margin-bottom: 1.5rem;
+    }
+}
+
+/*
+    Removed the media query that forced .product-filters to display: block on screens >= 993px.
+    This ensures that the filter section's default state (hidden) is maintained unless
+    the 'active' class is added via JavaScript.
+
+    Also removed 'display: none' from .toggle-filter-btn for larger screens, so it's always visible.
+*/
+
+
+@media (max-width: 768px) {
+    .products-container h2 {
+        font-size: 1.8rem;
+    }
+
+    .product-grid {
+        grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+        gap: 1.5rem;
+    }
+
+    .product-card img {
+        height: 150px;
+    }
+
+    .product-card h3 {
+        font-size: 1.2rem;
+    }
+
+    .product-card .product-price {
+        font-size: 1.1rem;
+    }
+
+    .product-actions .icon {
+        font-size: 1.5rem;
+    }
+
+    .filter-group h4 {
+        font-size: 1.1rem;
+    }
+    .filter-group label {
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .product-grid {
+        grid-template-columns: 1fr;
+        padding: 0.5rem;
+    }
+
+    .products-container {
+        margin: 2rem auto;
+    }
+
+    .product-card {
+        padding: 1rem;
+    }
+
+    .product-filters {
+        padding: 1rem;
+        width: 100%;
+    }
+
+    .product-filters h3 {
+        font-size: 1.5rem;
+    }
+}

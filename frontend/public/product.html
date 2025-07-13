@@ -1,0 +1,515 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>StrideX - Our Products</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="products.css" />
+    <script src="https://kit.fontawesome.com/16a3c02450.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+
+    <div class="logo-top">StrideX</div>
+
+    <nav class="navbar">
+        <div class="nav-left">
+            <a href="signup.html" class="signin-signup">Sign in/Sign up</a>
+        </div>
+
+        <div class="nav-center">
+            <ul class="nav-menu">
+                <li><a href="index.html">Home</a></li>
+                <li class="dropdown">
+                    <a href="products.html">Products <i class="fas fa-caret-right"></i></a>
+                    <div class="dropdown-content">
+                        <a href="products.html">All Products</a>
+                        <a href="sneakermen.html">Men's sneaker</a>
+                        <a href="sneakerwomen.html">Women's sneaker</a>
+                        <a href="heels.html">heels</a>
+                        <a href="boots.html">boots</a>
+                        <a href="sportshoes.html">sports shoes</a>
+                    </div>
+                </li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="support.html">Support</a></li>
+                <li><a href="about.html">About</a></li>
+            </ul>
+        </div>
+
+        <div class="nav-right">
+            <i class="fas fa-search icon" id="searchIcon"></i>
+            <a href="wishlist.html" title="Wishlist">
+                <i class="fas fa-heart icon"></i>
+            </a>
+            <a href="cart.html">
+                <i class="fas fa-shopping-cart icon" title="Cart"></i>
+            </a>
+            <a href="profile.html">
+                <i class="fas fa-user icon" title="Profile"></i>
+            </a>
+        </div>
+    </nav>
+
+    <main class="products-container" style="margin: 20px;">
+        <h2>Our Collection</h2>
+
+        <div class="filter-toggle-container">
+            <button id="toggleFilterBtn" class="toggle-filter-btn">
+                <i class="fas fa-filter"></i> Show Filters
+            </button>
+        </div>
+
+
+        <div class="main-product-layout">
+            <aside class="product-filters" id="productFilters">
+                <h3>Filters</h3>
+
+                <div class="filter-group">
+                    <h4>Category</h4>
+                    <label><input type="checkbox" name="category" value="sneakers"> Sneakers</label>
+                    <label><input type="checkbox" name="category" value="sport-shoes"> Sport Shoes</label>
+                    <label><input type="checkbox" name="category" value="flip-flops"> Flip Flops</label>
+                    <label><input type="checkbox" name="category" value="heels"> Heels</label>
+                    <label><input type="checkbox" name="category" value="loafers"> Loafers</label>
+                    <label><input type="checkbox" name="category" value="boots"> Boots</label>
+                    <label><input type="checkbox" name="category" value="sandals"> Sandals</label>
+                    <label><input type="checkbox" name="category" value="flats"> Flats</label>
+                </div>
+
+                <div class="filter-group">
+                    <h4>Price Range</h4>
+                    <label><input type="radio" name="price" value="0-1000"> Below ₹1000</label>
+                    <label><input type="radio" name="price" value="1000-2500"> ₹1000 - ₹2500</label>
+                    <label><input type="radio" name="price" value="2500-5000"> ₹2500 - ₹5000</label>
+                    <label><input type="radio" name="price" value="5000-up"> Above ₹5000</label>
+                    <input type="range" min="0" max="10000" value="0" class="price-slider" id="priceRange">
+                    <p>Current Price: ₹<span id="currentPriceValue">0</span></p>
+                </div>
+
+                <div class="filter-group">
+                    <h4>Brand</h4>
+                    <label><input type="checkbox" name="brand" value="nike"> Nike</label>
+                    <label><input type="checkbox" name="brand" value="adidas"> Adidas</label>
+                    <label><input type="checkbox" name="brand" value="puma"> Puma</label>
+                    <label><input type="checkbox" name="brand" value="reebok"> Reebok</label>
+                    <label><input type="checkbox" name="brand" value="stridex"> StrideX</label>
+                    <label><input type="checkbox" name="brand" value="other"> Other</label>
+                </div>
+
+                <div class="filter-group">
+                    <h4>Color</h4>
+                    <div class="color-options">
+                        <span class="color-swatch" style="background-color: black;" data-color="black"></span>
+                        <span class="color-swatch" style="background-color: white;" data-color="white"></span>
+                        <span class="color-swatch" style="background-color: red;" data-color="red"></span>
+                        <span class="color-swatch" style="background-color: blue;" data-color="blue"></span>
+                        <span class="color-swatch" style="background-color: grey;" data-color="grey"></span>
+                        <span class="color-swatch" style="background-color: brown;" data-color="brown"></span>
+                    </div>
+                </div>
+
+                <button class="apply-filters-btn">Apply Filters</button>
+                <button class="clear-filters-btn">Clear Filters</button>
+            </aside>
+
+            <div class="product-listing">
+                <div class="product-grid">
+                    <div class="product-card">
+                        <img src="images/Adidas Advantage Base.jpg" alt="Adidas Advantage Base" />
+                        <h3>Adidas Advantage Base</h3>
+                        <p class="product-price">₹4299</p>
+                        <div class="product-actions">
+                            <i class="fas fa-shopping-cart icon btn-add-to-cart"
+                                onclick="addToCart('prod001', 'Classic White Sneakers', 2499, 'images/Adidas Advantage Base.jpg')"></i>
+                            <i class="fas fa-heart icon btn-add-to-wishlist"
+                                onclick="addToWishlist('prod001', 'Classic White Sneakers', 2499, 'images/Adidas Advantage Base.jpg')"></i>
+                        </div>
+                    </div>
+
+                    <div class="product-card">
+                        <img src="images/Adidas Duramo SL.jpg" alt="Adidas Duramo SL" />
+                        <h3>Adidas Duramo SL</h3>
+                        <p class="product-price">₹4799</p>
+                        <div class="product-actions">
+                            <i class="fas fa-shopping-cart icon btn-add-to-cart"
+                                onclick="addToCart('prod002', 'Sporty Running Shoes', 3999, 'images/Adidas Duramo SL.jpg')"></i>
+                            <i class="fas fa-heart icon btn-add-to-wishlist"
+                                onclick="addToWishlist('prod002', 'Sporty Running Shoes', 3999, 'images/Adidas Duramo SL.jpg')"></i>
+                        </div>
+                    </div>
+
+                    <div class="product-card">
+                        <img src="images/Adidas Grand Court 2.0.jpg" alt="Adidas Grand Court 2.0" />
+                        <h3>Adidas Grand Court 2.0</h3>
+                        <p class="product-price">₹4999</p>
+                        <div class="product-actions">
+                            <i class="fas fa-shopping-cart icon btn-add-to-cart"
+                                onclick="addToCart('prod003', 'Elegant High Heels', 2999, 'images/Adidas Grand Court 2.0.jpg')"></i>
+                            <i class="fas fa-heart icon btn-add-to-wishlist"
+                                onclick="addToWishlist('prod003', 'Elegant High Heels', 2999, 'images/Adidas Grand Court 2.0.jpg')"></i>
+                        </div>
+                    </div>
+
+                    <div class="product-card">
+                        <img src="images/Aldo Strappy High Heels.jpg" alt="Aldo Strappy High Heels" />
+                        <h3>Aldo Strappy High Heels</h3>
+                        <p class="product-price">₹8499</p>
+                        <div class="product-actions">
+                            <i class="fas fa-shopping-cart icon btn-add-to-cart"
+                                onclick="addToCart('prod004', 'Comfortable Flip Flops', 899, 'images/Aldo Strappy High Heels.jpg')"></i>
+                            <i class="fas fa-heart icon btn-add-to-wishlist"
+                                onclick="addToWishlist('prod004', 'Comfortable Flip Flops', 899, 'images/Aldo Strappy High Heels.jpg')"></i>
+                        </div>
+                    </div>
+
+                    <div class="product-card">
+                        <img src="images/ASICS Gel-Contend 7.jpg" alt="ASICS Gel-Contend 7" />
+                        <h3>ASICS Gel-Contend 7</h3>
+                        <p class="product-price">₹6999</p>
+                        <div class="product-actions">
+                            <i class="fas fa-shopping-cart icon btn-add-to-cart"
+                                onclick="addToCart('prod005', 'Stylish Loafers', 1999, 'images/ASICS Gel-Contend 7.jpg)"></i>
+                            <i class="fas fa-heart icon btn-add-to-wishlist"
+                                onclick="addToWishlist('prod005', 'Stylish Loafers', 1999, 'images/ASICS Gel-Contend 7.jpg')"></i>
+                        </div>
+                    </div>
+
+                    <div class="product-card">
+                        <img src="images/Catwalk Block Heel Sandals.jpg" alt="Catwalk Block Heel Sandals" />
+                        <h3>Catwalk Block Heel Sandals</h3>
+                        <p class="product-price">₹2199</p>
+                        <div class="product-actions">
+                            <i class="fas fa-shopping-cart icon btn-add-to-cart"
+                                onclick="addToCart('prod006', 'Casual Canvas Shoes', 1499, 'images/Catwalk Block Heel Sandals.jpg')"></i>
+                            <i class="fas fa-heart icon btn-add-to-wishlist"
+                                onclick="addToWishlist('prod006', 'Casual Canvas Shoes', 1499, 'images/Catwalk Block Heel Sandals.jpg')"></i>
+                        </div>
+                    </div>
+
+                    <div class="product-card">
+                        <img src="images/Clarks Desert Boots.jpg" alt="Clarks Desert Boots" />
+                        <h3>Clarks Desert Boots</h3>
+                        <p class="product-price">₹9499</p>
+                        <div class="product-actions">
+                            <i class="fas fa-shopping-cart icon btn-add-to-cart"
+                                onclick="addToCart('prod007', 'Formal Leather Shoes', 4500, 'images/Clarks Desert Boots.jpg')"></i>
+                            <i class="fas fa-heart icon btn-add-to-wishlist"
+                                onclick="addToWishlist('prod007', 'Formal Leather Shoes', 4500, 'images/Clarks Desert Boots.jpg')"></i>
+                        </div>
+                    </div>
+
+                    <div class="product-card">
+                        <img src="images/Converse Chuck Taylor All Star.jpg" alt="Converse Chuck Taylor All Star" />
+                        <h3>Converse Chuck Taylor All Star</h3>
+                        <p class="product-price">₹4499</p>
+                        <div class="product-actions">
+                            <i class="fas fa-shopping-cart icon btn-add-to-cart"
+                                onclick="addToCart('prod008', 'Waterproof Hiking Boots', 5500, 'images/Converse Chuck Taylor All Star.jpg')"></i>
+                            <i class="fas fa-heart icon btn-add-to-wishlist"
+                                onclick="addToWishlist('prod008', 'Waterproof Hiking Boots', 5500, 'images/Converse Chuck Taylor All Star.jpg')"></i>
+                        </div>
+                    </div>
+
+                    <div class="product-card">
+                        <img src="images/Converse Chuck Taylor Lift.jpg" alt="Converse Chuck Taylor Lift" />
+                        <h3>Converse Chuck Taylor Lift</h3>
+                        <p class="product-price">₹5499</p>
+                        <div class="product-actions">
+                            <i class="fas fa-shopping-cart icon btn-add-to-cart"
+                                onclick="addToCart('prod009', 'Kids Light-Up Sneakers', 1200, 'images/Converse Chuck Taylor Lift.jpg')"></i>
+                            <i class="fas fa-heart icon btn-add-to-wishlist"
+                                onclick="addToWishlist('prod009', 'Kids Light-Up Sneakers', 1200, 'images/Converse Chuck Taylor Lift.jpg')"></i>
+                        </div>
+                    </div>
+
+                    <div class="product-card">
+                        <img src="images/H&M Stiletto Pointed Toe.jpg" alt="H&M Stiletto Pointed Toe" />
+                        <h3>H&M Stiletto Pointed Toe</h3>
+                        <p class="product-price">₹2999</p>
+                        <div class="product-actions">
+                            <i class="fas fa-shopping-cart icon btn-add-to-cart"
+                                onclick="addToCart('prod010', 'Sport Sandals', 1800, 'images/H&M Stiletto Pointed Toe.jpg')"></i>
+                            <i class="fas fa-heart icon btn-add-to-wishlist"
+                                onclick="addToWishlist('prod010', 'Sport Sandals', 1800, 'images/H&M Stiletto Pointed Toe.jpg')"></i>
+                        </div>
+                    </div>
+
+                    <div class="product-card">
+                        <img src="images/Hush Puppies Suede Boots.jpg" alt="Hush Puppies Suede Boots" />
+                        <h3>Hush Puppies Suede Boots</h3>
+                        <p class="product-price">₹6999</p>
+                        <div class="product-actions">
+                            <i class="fas fa-shopping-cart icon btn-add-to-cart"
+                                onclick="addToCart('prod011', 'Ballet Flats', 1100, 'images/Hush Puppies Suede Boots.jpg')"></i>
+                            <i class="fas fa-heart icon btn-add-to-wishlist"
+                                onclick="addToWishlist('prod011', 'Ballet Flats', 1100, 'images/Hush Puppies Suede Boots.jpg')"></i>
+                        </div>
+                    </div>
+
+                    <div class="product-card">
+                        <img src="images/Metro Kitten Heels.jpg" alt="Metro Kitten Heels" />
+                        <h3>Metro Kitten Heels</h3>
+                        <p class="product-price">₹3799</p>
+                        <div class="product-actions">
+                            <i class="fas fa-shopping-cart icon btn-add-to-cart"
+                                onclick="addToCart('prod012', 'Wedge Heels', 3200, 'images/Metro Kitten Heels.jpg')"></i>
+                            <i class="fas fa-heart icon btn-add-to-wishlist"
+                                onclick="addToWishlist('prod012', 'Wedge Heels', 3200, 'images/Metro Kitten Heels.jpg')"></i>
+                        </div>
+                    </div>
+
+                    <div class="product-card">
+                        <img src="images/Nike Court Legacy Lift.jpg" alt="Nike Court Legacy Lift" />
+                        <h3>Nike Court Legacy Lift</h3>
+                        <p class="product-price">₹6495</p>
+                        <div class="product-actions">
+                            <i class="fas fa-shopping-cart icon btn-add-to-cart"
+                                onclick="addToCart('prod013', 'Slip-On Trainers', 2100, 'images/Nike Court Legacy Lift.jpg')"></i>
+                            <i class="fas fa-heart icon btn-add-to-wishlist"
+                                onclick="addToWishlist('prod013', 'Slip-On Trainers', 2100, 'images/Nike Court Legacy Lift.jpg')"></i>
+                        </div>
+                    </div>
+
+                    <div class="product-card">
+                        <img src="images/Nike Court Vision Low.jpg" alt="Nike Court Vision Low" />
+                        <h3>Nike Court Vision Low</h3>
+                        <p class="product-price">₹5295</p>
+                        <div class="product-actions">
+                            <i class="fas fa-shopping-cart icon btn-add-to-cart"
+                                onclick="addToCart('prod014', 'Ankle Boots', 4200, 'images/Nike Court Vision Low.jpg')"></i>
+                            <i class="fas fa-heart icon btn-add-to-wishlist"
+                                onclick="addToWishlist('prod014', 'Ankle Boots', 4200, 'images/Nike Court Vision Low.jpg')"></i>
+                        </div>
+                    </div>
+
+                    <div class="product-card">
+                        <img src="images/Nike Revolution 7.jpg" alt="Nike Revolution 7" />
+                        <h3>Nike Revolution 7</h3>
+                        <p class="product-price">₹3999</p>
+                        <div class="product-actions">
+                            <i class="fas fa-shopping-cart icon btn-add-to-cart"
+                                onclick="addToCart('prod015', 'Beach Sandals', 700, 'images/Nike Revolution 7.jpg')"></i>
+                            <i class="fas fa-heart icon btn-add-to-wishlist"
+                                onclick="addToWishlist('prod015', 'Beach Sandals', 700, 'images/Nike Revolution 7.jpg')"></i>
+                        </div>
+                    </div>
+
+                    <div class="product-card">
+                        <img src="images/Puma Carina 2.0.jpg" alt="Puma Carina 2.0" />
+                        <h3>Puma Carina 2.0</h3>
+                        <p class="product-price">₹3799</p>
+                        <div class="product-actions">
+                            <i class="fas fa-shopping-cart icon btn-add-to-cart"
+                                onclick="addToCart('prod016', 'Smart Casual Shoes', 2800, 'images/Puma Carina 2.0.jpg')"></i>
+                            <i class="fas fa-heart icon btn-add-to-wishlist"
+                                onclick="addToWishlist('prod016', 'Smart Casual Shoes', 2800, 'images/Puma Carina 2.0.jpg')"></i>
+                        </div>
+                    </div>
+
+                    <div class="product-card">
+                        <img src="images/Puma Flyer Runner.jpg" alt="Puma Flyer Runner" />
+                        <h3>Puma Flyer Runner</h3>
+                        <p class="product-price">₹2499</p>
+                        <div class="product-actions">
+                            <i class="fas fa-shopping-cart icon btn-add-to-cart"
+                                onclick="addToCart('prod017', 'Basketball Shoes', 4800, 'images/Puma Flyer Runner.jpg')"></i>
+                            <i class="fas fa-heart icon btn-add-to-wishlist"
+                                onclick="addToWishlist('prod017', 'Basketball Shoes', 4800, 'images/Puma Flyer Runner.jpg')"></i>
+                        </div>
+                    </div>
+
+                    <div class="product-card">
+                        <img src="images/Puma Smash v2.jpg" alt="Puma Smash v2" />
+                        <h3>Puma Smash v2</h3>
+                        <p class="product-price">₹3599</p>
+                        <div class="product-actions">
+                            <i class="fas fa-shopping-cart icon btn-add-to-cart"
+                                onclick="addToCart('prod018', 'Golf Shoes', 3500, 'images/Puma Smash v2.jpg')"></i>
+                            <i class="fas fa-heart icon btn-add-to-wishlist"
+                                onclick="addToWishlist('prod018', 'Golf Shoes', 3500, 'images/Puma Smash v2.jpg')"></i>
+                        </div>
+                    </div>
+
+                    <div class="product-card">
+                        <img src="images/Red Tape Chelsea Boots.jpg" alt="Red Tape Chelsea Boots" />
+                        <h3>Red Tape Chelsea Boots</h3>
+                        <p class="product-price">₹5499</p>
+                        <div class="product-actions">
+                            <i class="fas fa-shopping-cart icon btn-add-to-cart"
+                                onclick="addToCart('prod019', 'Trainers for Gym', 2600, 'images/Red Tape Chelsea Boots.jpg')"></i>
+                            <i class="fas fa-heart icon btn-add-to-wishlist"
+                                onclick="addToWishlist('prod019', 'Trainers for Gym', 2600, 'images/Red Tape Chelsea Boots.jpg')"></i>
+                        </div>
+                    </div>
+
+                    <div class="product-card">
+                        <img src="images/Reebok Zig Dynamica 4.jpg" alt="Reebok Zig Dynamica 4" />
+                        <h3>Reebok Zig Dynamica 4</h3>
+                        <p class="product-price">₹5499</p>
+                        <div class="product-actions">
+                            <i class="fas fa-shopping-cart icon btn-add-to-cart"
+                                onclick="addToCart('prod020', 'Outdoor Sandals', 1600, 'images/Reebok Zig Dynamica 4.jpg')"></i>
+                            <i class="fas fa-heart icon btn-add-to-wishlist"
+                                onclick="addToWishlist('prod020', 'Outdoor Sandals', 1600, 'images/Reebok Zig Dynamica 4.jpg')"></i>
+                        </div>
+                    </div>
+
+                    <div class="product-card">
+                        <img src="images/Skechers Uno Stand On Air.jpg" alt="Skechers Uno Stand On Air" />
+                        <h3>Skechers Uno Stand On Air</h3>
+                        <p class="product-price">₹7499</p>
+                        <div class="product-actions">
+                            <i class="fas fa-shopping-cart icon btn-add-to-cart"
+                                onclick="addToCart('prod021', 'Fashion Boots', 3800, 'images/Skechers Uno Stand On Air.jpg')"></i>
+                            <i class="fas fa-heart icon btn-add-to-wishlist"
+                                onclick="addToWishlist('prod021', 'Fashion Boots', 3800, 'images/Skechers Uno Stand On Air.jpg')"></i>
+                        </div>
+                    </div>
+
+                    <div class="product-card">
+                        <img src="images/Steve Madden Irenee Heels.jpg" alt="Steve Madden Irenee Heels" />
+                        <h3>Steve Madden Irenee Heels</h3>
+                        <p class="product-price">₹9999</p>
+                        <div class="product-actions">
+                            <i class="fas fa-shopping-cart icon btn-add-to-cart"
+                                onclick="addToCart('prod022', 'Comfort Slippers', 600, 'images/Steve Madden Irenee Heels.jpg')"></i>
+                            <i class="fas fa-heart icon btn-add-to-wishlist"
+                                onclick="addToWishlist('prod022', 'Comfort Slippers', 600, 'images/Steve Madden Irenee Heels.jpg')"></i>
+                        </div>
+                    </div>
+
+                    <div class="product-card">
+                        <img src="images/Vans Old Skool Classic.jpg" alt="Vans Old Skool Classic" />
+                        <h3>Vans Old Skool Classic</h3>
+                        <p class="product-price">₹6999</p>
+                        <div class="product-actions">
+                            <i class="fas fa-shopping-cart icon btn-add-to-cart"
+                                onclick="addToCart('prod023', 'Running Spikes', 5200, 'images/Vans Old Skool Classic.jpg')"></i>
+                            <i class="fas fa-heart icon btn-add-to-wishlist"
+                                onclick="addToWishlist('prod023', 'Running Spikes', 5200, 'images/Vans Old Skool Classic.jpg')"></i>
+                        </div>
+                    </div>
+
+                    <div class="product-card">
+                        <img src="images/Woodland Leather Ankle Boots.jpg" alt="Woodland Leather Ankle Boots" />
+                        <h3>Woodland Leather Ankle Boots</h3>
+                        <p class="product-price">₹7999</p>
+                        <div class="product-actions">
+                            <i class="fas fa-shopping-cart icon btn-add-to-cart"
+                                onclick="addToCart('prod024', 'Casual Mules', 1700, 'images/Woodland Leather Ankle Boots.jpg')"></i>
+                            <i class="fas fa-heart icon btn-add-to-wishlist"
+                                onclick="addToWishlist('prod024', 'Casual Mules', 1700, 'images/Woodland Leather Ankle Boots.jpg')"></i>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-section">
+            <button class="footer-toggle">Support</button>
+            <div class="footer-content">
+                <p>Email: stridex.global@gmail.com</p>
+            </div>
+        </div>
+        <div class="footer-section">
+            <button class="footer-toggle">About Us</button>
+            <div class="footer-content">
+                <p>StrideX represents a modern, secure, and scalable e-commerce platform focused on selling footwear
+                    online. With a robust front-end, secure and functional back-end, and a user-friendly admin panel,
+                    the project showcases collaborative effort and practical application of web development concepts. It
+                    is a step forward in learning real-world software development and solving customer needs in the
+                    digital era.</p>
+            </div>
+        </div>
+        <div class="footer-section">
+            <button class="footer-toggle">Visit Us On</button>
+            <div class="footer-content">
+                <p>Instagram: stridexglobal</p>
+            </div>
+        </div>
+        <div class="footer-section">
+            <button class="footer-toggle">Our Team</button>
+            <div class="footer-content">
+                <p>Bhoomi Jindal - Frontend Development | Nandini Mittal - Backend Development | Atal Sachan</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="scripts.js"></script>
+    <script>
+        function addToWishlist(id, name, price, image) {
+            alert(`${name} added to wishlist! (Functionality to be implemented)`);
+        }
+
+        const priceRange = document.getElementById('priceRange');
+        const currentPriceValue = document.getElementById('currentPriceValue');
+
+        if (priceRange && currentPriceValue) {
+            currentPriceValue.textContent = priceRange.value;
+            priceRange.oninput = function () {
+                currentPriceValue.textContent = this.value;
+            }
+        }
+
+        document.querySelectorAll('.color-swatch').forEach(swatch => {
+            swatch.addEventListener('click', () => {
+                alert(`Filter by color: ${swatch.dataset.color} (Functionality to be implemented)`);
+            });
+        });
+
+        document.querySelector('.apply-filters-btn').addEventListener('click', () => {
+            alert('Applying filters... (Functionality to be implemented)');
+        });
+
+        document.querySelector('.clear-filters-btn').addEventListener('click', () => {
+            alert('Clearing filters... (Functionality to be implemented)');
+            document.querySelectorAll('.product-filters input[type="checkbox"]').forEach(checkbox => checkbox.checked = false);
+            document.querySelectorAll('.product-filters input[type="radio"]').forEach(radio => radio.checked = false);
+            document.getElementById('priceRange').value = 0;
+            document.getElementById('currentPriceValue').textContent = 0;
+        });
+
+        const toggleFilterBtn = document.getElementById('toggleFilterBtn');
+        const productFilters = document.getElementById('productFilters');
+        const mainProductLayout = document.querySelector('.main-product-layout');
+
+        toggleFilterBtn.addEventListener('click', () => {
+            productFilters.classList.toggle('active');
+            mainProductLayout.classList.toggle('filters-active'); 
+            if (productFilters.classList.contains('active')) {
+                toggleFilterBtn.innerHTML = '<i class="fas fa-times"></i> Hide Filters';
+            } else {
+                toggleFilterBtn.innerHTML = '<i class="fas fa-filter"></i> Show Filters';
+            }
+        });
+
+        function adjustFilterVisibility() {
+            if (window.innerWidth >= 992) {
+                if (!productFilters.classList.contains('active')) {
+                    productFilters.classList.add('active');
+                    mainProductLayout.classList.add('filters-active');
+                    toggleFilterBtn.innerHTML = '<i class="fas fa-times"></i> Hide Filters';
+                }
+            } else {
+                if (productFilters.classList.contains('active') && !toggleFilterBtn.classList.contains('manually-toggled')) {
+                    productFilters.classList.remove('active');
+                    mainProductLayout.classList.remove('filters-active');
+                    toggleFilterBtn.innerHTML = '<i class="fas fa-filter"></i> Show Filters';
+                }
+            }
+        }
+
+        adjustFilterVisibility();
+        window.addEventListener('resize', adjustFilterVisibility);
+
+    </script>
+
+</body>
+
+</html>

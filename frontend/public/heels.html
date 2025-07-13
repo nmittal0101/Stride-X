@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>StrideX - Heels Collection</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="products.css" />
+    <script src="https://kit.fontawesome.com/16a3c02450.js" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+    <div class="logo-top">StrideX</div>
+
+    <nav class="navbar">
+        <div class="nav-left">
+            <a href="signup.html" class="signin-signup">Sign in/Sign up</a>
+        </div>
+
+        <div class="nav-center">
+            <ul class="nav-menu">
+                <li><a href="index.html">Home</a></li>
+                <li class="dropdown">
+                    <a href="product.html">Products <i class="fas fa-caret-right"></i></a>
+                    <div class="dropdown-content">
+                        <a href="product.html">All Products</a>
+                        <a href="sneakermen.html">Men's Sneakers</a>
+                        <a href="sneakerwomen.html">Women's Sneakers</a>
+                        <a href="heels.html">Heels</a>
+                        <a href="boots.html">Boots</a>
+                        <a href="sportshoes.html">Sport Shoes</a>
+                    </div>
+                </li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="support.html">Support</a></li>
+                <li><a href="about.html">About</a></li>
+            </ul>
+        </div>
+
+        <div class="nav-right">
+            <i class="fas fa-search icon" id="searchIcon"></i>
+            <input type="text" placeholder="Search products..." class="search-input" id="searchInput" />
+
+            <a href="wishlist.html" title="Wishlist">
+                <i class="fas fa-heart icon"></i>
+            </a>
+
+            <a href="cart.html">
+                <i class="fas fa-shopping-cart icon" title="Cart"></i>
+            </a>
+
+            <a href="profile.html">
+                <i class="fas fa-user icon" title="Profile"></i>
+            </a>
+        </div>
+    </nav>
+
+    <div class="products-container" style="margin: 20px;">
+        <h2>Heels Collection</h2>
+
+        <div class="filter-toggle-container">
+            <button class="toggle-filter-btn" id="toggleFilterBtn">
+                <i class="fas fa-filter"></i> Show Filters
+            </button>
+        </div>
+
+        <div class="main-product-layout" id="mainProductLayout">
+            <aside class="product-filters" id="productFilters">
+                <h3>Filter Heels</h3>
+
+                <div class="filter-group">
+                    <h4>Heel Type</h4>
+                    <label><input type="checkbox" name="heel-type" value="stiletto"> Stiletto Heels</label>
+                    <label><input type="checkbox" name="heel-type" value="block"> Block Heels</label>
+                    <label><input type="checkbox" name="heel-type" value="wedge"> Wedge Heels</label>
+                    <label><input type="checkbox" name="heel-type" value="kitten"> Kitten Heels</label>
+                </div>
+
+                <div class="filter-group">
+                    <h4>Price Range</h4>
+                    <input type="range" min="2500" max="18000" value="7000" class="price-slider" id="priceRange">
+                    <p>Price: ₹<span id="priceValue">7000</span></p>
+                </div>
+
+                <div class="filter-group">
+                    <h4>Size (UK)</h4>
+                    <label><input type="radio" name="size" value="uk4"> UK 4</label>
+                    <label><input type="radio" name="size" value="uk5"> UK 5</label>
+                    <label><input type="radio" name="size" value="uk6"> UK 6</label>
+                    <label><input type="radio" name="size" value="uk7"> UK 7</label>
+                </div>
+
+                <div class="filter-group">
+                    <h4>Occasion</h4>
+                    <label><input type="checkbox" name="occasion" value="party"> Party Wear</label>
+                    <label><input type="checkbox" name="occasion" value="formal"> Formal</label>
+                    <label><input type="checkbox" name="occasion" value="casual"> Casual</label>
+                </div>
+
+                <div class="filter-group">
+                    <h4>Color</h4>
+                    <div class="color-options">
+                        <span class="color-swatch" style="background-color: black;" title="Black"></span>
+                        <span class="color-swatch" style="background-color: red;" title="Red"></span>
+                        <span class="color-swatch" style="background-color: gold;" title="Gold"></span>
+                        <span class="color-swatch" style="background-color: silver;" title="Silver"></span>
+                    </div>
+                </div>
+
+                <button class="apply-filters-btn">Apply Filters</button>
+                <button class="clear-filters-btn">Clear Filters</button>
+            </aside>
+
+            <div class="product-listing">
+                <div class="product-grid">
+                    <div class="product-card">
+                        <img src="images/Catwalk Block Heel Sandals.jpg" alt="Catwalk Block Heel Sandals" />
+                        <h3>Catwalk Block Heel Sandals</h3>
+                        <p class="product-price">₹2199</p>
+                        <div class="product-actions">
+                            <i class="fas fa-shopping-cart icon btn-add-to-cart"
+                                onclick="addToCart('heel001', 'Classic Black Stiletto Heels', 5800, 'images/Catwalk Block Heel Sandals.jpg')"></i>
+                            <i class="fas fa-heart icon btn-add-to-wishlist"
+                                onclick="addToWishlist('heel001', 'Classic Black Stiletto Heels', 5800, 'images/Catwalk Block Heel Sandals.jpg')"></i>
+                        </div>
+                    </div>
+
+                    <div class="product-card">
+                        <img src="images/H&M Stiletto Pointed Toe.jpg" alt="H&M Stiletto Pointed Toe" />
+                        <h3>H&M Stiletto Pointed Toe</h3>
+                        <p class="product-price">₹2999</p>
+                        <div class="product-actions">
+                            <i class="fas fa-shopping-cart icon btn-add-to-cart"
+                                onclick="addToCart('heel002', 'Elegant Red Block Heels', 4200, 'images/H&M Stiletto Pointed Toe.jpg')"></i>
+                            <i class="fas fa-heart icon btn-add-to-wishlist"
+                                onclick="addToWishlist('heel002', 'Elegant Red Block Heels', 4200, 'images/H&M Stiletto Pointed Toe.jpg')"></i>
+                        </div>
+                    </div>
+
+                    <div class="product-card">
+                        <img src="images/Metro Kitten Heels.jpg" alt="Metro Kitten Heels" />
+                        <h3>Metro Kitten Heels</h3>
+                        <p class="product-price">₹3799</p>
+                        <div class="product-actions">
+                            <i class="fas fa-shopping-cart icon btn-add-to-cart"
+                                onclick="addToCart('heel003', 'Comfort Nude Wedge Heels', 3500, 'images/Metro Kitten Heels.jpg')"></i>
+                            <i class="fas fa-heart icon btn-add-to-wishlist"
+                                onclick="addToWishlist('heel003', 'Comfort Nude Wedge Heels', 3500, 'images/Metro Kitten Heels.jpg')"></i>
+                        </div>
+                    </div>
+
+                    <div class="product-card">
+                        <img src="images/Steve Madden Irenee Heels.jpg" alt="Steve Madden Irenee Heels" />
+                        <h3>Steve Madden Irenee Heels</h3>
+                        <p class="product-price">₹9999</p>
+                        <div class="product-actions">
+                            <i class="fas fa-shopping-cart icon btn-add-to-cart"
+                                onclick="addToCart('heel004', 'Sparkling Gold Party Heels', 6900, 'images/Steve Madden Irenee Heels.jpg')"></i>
+                            <i class="fas fa-heart icon btn-add-to-wishlist"
+                                onclick="addToWishlist('heel004', 'Sparkling Gold Party Heels', 6900, 'images/Steve Madden Irenee Heels.jpg')"></i>
+                        </div>
+                    </div>
+
+                    <div class="product-card">
+                        <img src="images/Aldo Strappy High Heels.jpg" alt="Aldo Strappy High Heels" />
+                        <h3>Aldo Strappy High Heels</h3>
+                        <p class="product-price">₹8499</p>
+                        <div class="product-actions">
+                            <i class="fas fa-shopping-cart icon btn-add-to-cart"
+                                onclick="addToCart('heel005', 'Professional Kitten Heels', 3000, 'images/Aldo Strappy High Heels.jpg')"></i>
+                            <i class="fas fa-heart icon btn-add-to-wishlist"
+                                onclick="addToWishlist('heel005', 'Professional Kitten Heels', 3000, 'images/Aldo Strappy High Heels.jpg')"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="footer-section">
+            <button class="footer-toggle">Support</button>
+            <div class="footer-content">
+                <p>Email: stridex.global@gmail.com</p>
+            </div>
+        </div>
+        <div class="footer-section">
+            <button class="footer-toggle">About Us</button>
+            <div class="footer-content">
+                <p>StrideX represents a modern, secure, and scalable e-commerce platform focused on selling footwear
+                    online. With a robust front-end, secure and functional back-end, and a user-friendly admin panel,
+                    the project showcases collaborative effort and practical application of web development concepts. It
+                    is a step forward in learning real-world software development and solving customer needs in the
+                    digital era.</p>
+            </div>
+        </div>
+        <div class="footer-section">
+            <button class="footer-toggle">Visit Us On</button>
+            <div class="footer-content">
+                <p>Instagram: stridexglobal</p>
+            </div>
+        </div>
+        <div class="footer-section">
+            <button class="footer-toggle">Our Team</button>
+            <div class="footer-content">
+                <p>Bhoomi Jindal - Frontend Development | Nandini Mittal - Backend Development | Atal Sachan</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="scripts.js"></script>
+    <script>
+        const priceRange = document.getElementById('priceRange');
+        const priceValue = document.getElementById('priceValue');
+        if (priceRange && priceValue) {
+            priceValue.textContent = priceRange.value;
+            priceRange.oninput = function () {
+                priceValue.textContent = this.value;
+            }
+        }
+
+        const toggleFilterBtn = document.getElementById('toggleFilterBtn');
+        const productFilters = document.getElementById('productFilters');
+        const mainProductLayout = document.getElementById('mainProductLayout');
+
+        let filtersVisible = false;
+
+        function adjustFilterVisibility() {
+            if (window.innerWidth >= 993) {
+                if (filtersVisible) {
+                    mainProductLayout.classList.add('filters-active');
+                } else {
+                    mainProductLayout.classList.remove('filters-active');
+                }
+            } else {
+                mainProductLayout.classList.remove('filters-active');
+            }
+        }
+
+        if (toggleFilterBtn && productFilters && mainProductLayout) {
+            toggleFilterBtn.addEventListener('click', () => {
+                filtersVisible = !filtersVisible;
+                productFilters.classList.toggle('active', filtersVisible);
+                mainProductLayout.classList.toggle('filters-active', filtersVisible && window.innerWidth >= 993);
+
+                if (filtersVisible) {
+                    toggleFilterBtn.innerHTML = '<i class="fas fa-times"></i> Hide Filters';
+                } else {
+                    toggleFilterBtn.innerHTML = '<i class="fas fa-filter"></i> Show Filters';
+                }
+            });
+
+            adjustFilterVisibility();
+            window.addEventListener('resize', adjustFilterVisibility);
+        }
+    </script>
+</body>
+
+</html>
