@@ -935,3 +935,89 @@ footer {
 .product-card button:hover {
   background-color: #FFC7A0;
 }
+
+.checkout-container {
+  max-width: 1100px;
+  margin: 3rem auto;
+  padding: 2rem;
+  background-color: #FFE8CD;
+  border-radius: 10px;
+}
+
+.checkout-container h2 {
+  text-align: center;
+  color: #5C4B4B;
+  margin-bottom: 2rem;
+}
+
+.checkout-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  justify-content: space-between;
+}
+
+.checkout-form, .order-summary {
+  flex: 1 1 45%;
+  background-color: #FFF2EB;
+  padding: 1.5rem;
+  border-radius: 8px;
+}
+
+.checkout-form h3, .order-summary h3 {
+  color: #5C4B4B;
+  margin-bottom: 1rem;
+}
+
+.checkout-form label {
+  display: block;
+  margin-top: 1rem;
+  font-weight: 600;
+  color: #5C4B4B;
+}
+
+.checkout-form input,
+.checkout-form textarea {
+  width: 100%;
+  padding: 0.6rem;
+  margin-top: 0.3rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 1rem;
+  background-color: #fff;
+}
+
+.order-summary p {
+  font-size: 1rem;
+  color: #5C4B4B;
+  margin: 0.5rem 0;
+}
+
+.checkout-item {
+  margin-bottom: 0.5rem;
+}
+
+.order-summary button {
+  width: 100%;
+  padding: 0.8rem;
+  background-color: #FFD6BA;
+  border: none;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #5C4B4B;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 1rem;
+  transition: background-color 0.3s ease;
+}
+
+.order-summary button:hover {
+  background-color: #FFC7A0;
+}
+
+@media (max-width: 768px) {
+  .checkout-wrapper {
+    flex-direction: column;
+  }
+}
+

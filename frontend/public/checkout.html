@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Checkout - StrideX</title>
+  <link rel="stylesheet" href="styles.css" />
+  <script src="https://kit.fontawesome.com/16a3c02450.js" crossorigin="anonymous"></script>
+</head>
+<body>
+
+  <!-- Top branding -->
+  <div class="logo-top">StrideX</div>
+
+  <div class="checkout-container">
+    <h2>Checkout</h2>
+
+    <div class="checkout-wrapper">
+
+      <!-- Billing and Shipping -->
+      <div class="checkout-form">
+        <h3>Billing & Shipping Information</h3>
+        <form id="checkoutForm">
+          <label>Full Name</label>
+          <input type="text" required />
+
+          <label>Email</label>
+          <input type="email" required />
+
+          <label>Phone Number</label>
+          <input type="tel" required />
+
+          <label>Shipping Address</label>
+          <textarea required></textarea>
+
+          <label>City</label>
+          <input type="text" required />
+
+          <label>State</label>
+          <input type="text" required />
+
+          <label>Pin Code</label>
+          <input type="text" required />
+        </form>
+      </div>
+
+      <!-- Order Summary -->
+      <div class="order-summary">
+        <h3>Your Order</h3>
+        <div id="orderItems"></div>
+        <hr />
+        <p><strong>Total: ₹<span id="orderTotal">0</span></strong></p>
+        <button onclick="placeOrder()">Place Order</button>
+      </div>
+
+    </div>
+  </div>
+
+  <script src="scripts.js"></script>
+  <script>
+    function loadOrderSummary() {
+      const cart = JSON.parse(localStorage.getItem('cart')) || [];
+      const orderItems = document.getElementById('orderItems');
+      const orderTotal = document.getElementById('orderTotal');
+
+      if (cart.length === 0) {
+        orderItems.innerHTML = "<p>Your cart is empty.</p>";
+        return;
+      }
+
+      let total = 0;
+      cart.forEach(item => {
+        const itemDiv = document.createElement('div');
+        itemDiv.classList.add('checkout-item');
+        itemDiv.innerHTML = `
+          <p><strong>${item.name}</strong> - ₹${item.price}</p>
+        `;
+        orderItems.appendChild(itemDiv);
+        total += item.price;
+      });
+
+      orderTotal.textContent = total;
+    }
+
+    function placeOrder() {
+      const cart = JSON.parse(localStorage.getItem('cart')) || [];
+      if (cart.length === 0) {
+        alert("Cannot place order. Your cart is empty.");
+        return;
+      }
+
+      // Simulate storing to backend/local
+      const orders = JSON.parse(localStorage.getItem('orders')) || [];
+      orders.push({ id: Date.now(), items: cart });
+      localStorage.setItem('orders', JSON.stringify(orders));
+
+      localStorage.removeItem('cart');
+      alert("Order placed successfully!");
+      window.location.href = 'thankyou.html';
+    }
+
+    window.onload = loadOrderSummary;
+  </script>
+
+</body>
+</html>
